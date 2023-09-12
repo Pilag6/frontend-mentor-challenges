@@ -1,0 +1,44 @@
+---
+import Cards from "./Cards.astro";
+
+---
+
+<section class="cards-container">
+
+    <Cards 
+        img="./assets/images/image-retro-pcs.jpg"
+        number="01" 
+        title="Reviving Retro PCs"
+        content="What happens when old PCs are given modern upgrades?"
+    />
+    <Cards 
+        img="./assets/images/image-top-laptops.jpg"
+        number="02" 
+        title="Top 10 Laptops of 2022"
+        content="Our best picks for various needs and budgets"
+    />
+    <Cards 
+        img="./assets/images/image-gaming-growth.jpg"
+        number="03" 
+        title="The Growth of Gaming"
+        content="How the pandemic has sparked fresh opportunities."
+    />
+    
+</section>
+
+<style>
+    .cards-container {
+        display: flex;
+        gap: 10px;
+        margin: 40px auto;
+    }
+
+    @media screen and (max-width: 900px) {
+        .cards-container {
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
+
+    
+</style>

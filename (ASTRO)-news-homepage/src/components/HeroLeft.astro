@@ -1,0 +1,106 @@
+---
+import Button from "./Button.astro";
+
+const { title, content } = Astro.props;
+---
+
+<div class="left">
+    <!-- HERO IMAGES -->
+    <!-- <div class="hero-img img-desktop">
+        <img src="./assets/images/image-web-3-desktop.jpg" alt="" />
+    </div>
+
+    <div class="hero-img img-mobile">
+        <img src="./assets/images/image-web-3-mobile.jpg" alt="" />
+    </div> -->
+
+    <picture class="hero-img">
+        <source media="(min-width: 700px)" srcset="./assets/images/image-web-3-desktop.jpg" />
+        <img src="./assets/images/image-web-3-mobile.jpg" alt="" />
+    </picture>
+
+    <!-- HERO CONTENT -->
+    <div class="hero-content">
+        <h1 class="hero-content-left">{title}</h1>
+        <div class="hero-content-rigth">
+            <p>{content}</p>
+            <Button btnTitle="READ MORE" />
+        </div>
+    </div>
+</div>
+
+<style>
+    .left {
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 1.8rem;
+        flex: 1 0 62%;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* .img-mobile {
+        display: none;
+    } */
+
+    .hero-content {
+        display: flex;
+        flex-basis: 100%;
+    }
+
+    .hero-content-left,
+    .hero-content-rigth {
+        flex: 1 0 50%;
+        /* width: 50%; */
+    }
+
+    .left h1 {
+        font-size: 3.5rem;
+        font-weight: 800;
+        padding-right: 50px;
+        line-height: 1;
+    }
+
+    .left .hero-content-rigth {
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 1.8rem;
+        padding-right: 30px;
+    }
+
+    @media screen and (max-width: 700px) {
+        .left {
+            margin-bottom: 30px;
+        }
+
+        .hero-content {
+            flex-flow: column nowrap;
+        }
+
+        .left .hero-content-rigth {
+            padding-left: 0px;
+            padding-right: 0;
+        }
+
+        .left h1 {
+            font-size: 2.1rem;
+            padding-right: 20px;
+        }
+
+        /* .img-mobile img {
+            height: 300px;
+        }
+
+        .img-mobile {
+            display: block;
+        }
+
+        .img-desktop {
+            display: none;
+        } */
+    }
+</style>

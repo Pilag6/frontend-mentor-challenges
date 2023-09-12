@@ -1,0 +1,34 @@
+---
+const { title, content } = Astro.props;
+---
+
+<div class="new-item">
+    <h3><a href="#">{title}</a></h3>
+    <p>{content}</p>
+</div>
+
+<style>
+    h3 a:hover {
+        color: var(--Soft-orange);
+    }
+
+    h3 a {
+        color: var(--Off-white);
+    }
+
+    p {
+        color: var(--Grayish-blue);
+    }
+
+    .new-item {
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 0.8rem;
+    }
+
+    .new-item:not(:last-child) {
+        border-bottom: 1px solid var(--Grayish-blue);
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+    }
+</style>

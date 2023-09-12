@@ -1,0 +1,20 @@
+---
+const { btnTitle } = Astro.props;
+---
+
+<a href="#">{btnTitle}</a>
+
+<style>
+    a {
+        background: var(--Soft-red);
+        width: max-content;
+        padding: 14px 28px;
+        color: #fff;
+        letter-spacing: 4px;
+    }
+
+    a:hover {
+        background: var(--Very-dark-blue);
+    }
+
+</style>

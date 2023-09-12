@@ -1,0 +1,135 @@
+---
+
+---
+
+<header>
+    <!-- LOGO -->
+    <div class="logo">
+        <img
+            src="./assets/images/logo.svg"
+            alt="Logo"
+            width="60"
+            height="auto"
+        />
+    </div>
+
+    <!-- HAMBURGER MENU -->
+    <div class="menu">
+        <div class="hamburger">
+            <img src="./assets/images/icon-menu.svg" alt="" />
+        </div>
+
+        <div class="close-item">
+            <img src="./assets/images/icon-menu-close.svg" alt="" />
+        </div>
+
+        <!-- ITEMS MENU -->
+        <ul class="menu-list">
+            <li><a href="/">Home</a></li>
+            <li><a href="/">New</a></li>
+            <li><a href="/">Popular</a></li>
+            <li><a href="/">Trending</a></li>
+            <li><a href="/">Categories</a></li>
+        </ul>
+    </div>
+</header>
+
+<style>
+    header {
+        width: 100%;
+        height: 85px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 20px auto;
+    }
+
+    ul {
+        display: flex;
+        gap: 2.5rem;
+        margin: 0;
+        padding: 0;
+    }
+
+    a {
+        font-size: 1rem;
+    }
+
+    a:hover {
+        color: var(--Soft-red);
+    }
+
+    .close-item {
+        display: none;
+        position: absolute;
+        top: 55px;
+        right: 55px;
+        z-index: 999;
+    }
+
+    .close {
+        display: block;
+    }
+
+    .hamburger {
+        display: none;
+        position: absolute;
+        top: 55px;
+        right: 55px;
+        z-index: 999;
+        opacity: 0;
+    }
+
+    .none {
+        display: none;
+    }
+
+
+    @media screen and (max-width: 700px) {
+        ul {
+            display: none;
+        }
+
+        .hamburger {
+            display: flex;
+            opacity: 1;
+        }
+
+        .open {
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            padding: 80px 40px;
+            width: 75vw;
+            height: 100vh;
+            background-color: #fff;
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 2;
+        }
+    }
+</style>
+
+<script>
+    const hamburger = document.querySelector(".hamburger");
+    const menu = document.querySelector(".menu");
+    const menuList = document.querySelector(".menu-list");
+    const closeItem = document.querySelector(".close-item");
+
+    hamburger.addEventListener("click", () => {
+        menu.classList.toggle("open");
+        menuList.classList.toggle("open");
+        hamburger.classList.toggle("hamburger");
+        closeItem.classList.add("close");
+        // hamburger.remove();
+    });
+
+    closeItem.addEventListener("click", () => {
+        menu.classList.toggle("open");
+        menuList.classList.toggle("open");
+        closeItem.classList.remove("close");
+        hamburger.classList.add("hamburger");
+    });
+</script>
